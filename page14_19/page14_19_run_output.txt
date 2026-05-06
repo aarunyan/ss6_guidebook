@@ -1,0 +1,53 @@
+page14_19 RNN / LSTM / GRU demo
+================================
+Sentence under inspection: the cat sat on the mat while purring
+The live bars below show how much state each model carries forward.
+
+Vanilla RNN
+-----------
+t= 1 token=the      signal=0.10 state=-0.010 [..........................]
+t= 2 token=cat      signal=1.00 state=+0.547 [##############............]
+t= 3 token=sat      signal=0.55 state=+0.553 [##############............]
+t= 4 token=on       signal=0.15 state=+0.332 [#########.................]
+t= 5 token=the      signal=0.10 state=+0.181 [#####.....................]
+t= 6 token=mat      signal=0.85 state=+0.551 [##############............]
+t= 7 token=while    signal=0.20 state=+0.362 [#########.................]
+t= 8 token=purring  signal=0.65 state=+0.526 [##############............]
+
+LSTM
+----
+t= 1 token=the      signal=0.10 state=-0.011 [..........................] forget=0.75 input=0.44 output=0.63
+t= 2 token=cat      signal=1.00 state=+0.550 [##############............] forget=0.55 input=0.87 output=0.86
+t= 3 token=sat      signal=0.55 state=+0.550 [##############............] forget=0.66 input=0.69 output=0.76
+t= 4 token=on       signal=0.15 state=+0.389 [##########................] forget=0.74 input=0.47 output=0.65
+t= 5 token=the      signal=0.10 state=+0.293 [########..................] forget=0.75 input=0.44 output=0.63
+t= 6 token=mat      signal=0.85 state=+0.622 [################..........] forget=0.59 input=0.82 output=0.83
+t= 7 token=while    signal=0.20 state=+0.429 [###########...............] forget=0.73 input=0.50 output=0.66
+t= 8 token=purring  signal=0.65 state=+0.599 [################..........] forget=0.63 input=0.74 output=0.79
+
+GRU
+---
+t= 1 token=the      signal=0.10 state=+0.020 [#.........................] reset=0.73 update=0.50
+t= 2 token=cat      signal=1.00 state=+0.744 [###################.......] reset=0.35 update=0.86
+t= 3 token=sat      signal=0.55 state=+0.779 [####################......] reset=0.55 update=0.71
+t= 4 token=on       signal=0.15 state=+0.677 [##################........] reset=0.72 update=0.52
+t= 5 token=the      signal=0.10 state=+0.584 [###############...........] reset=0.73 update=0.50
+t= 6 token=mat      signal=0.85 state=+0.818 [#####################.....] reset=0.42 update=0.82
+t= 7 token=while    signal=0.20 state=+0.718 [###################.......] reset=0.70 update=0.55
+t= 8 token=purring  signal=0.65 state=+0.799 [#####################.....] reset=0.51 update=0.75
+
+Seq2Seq bottleneck snapshot
+--------------------------
+Source tokens : I saw a cute cat
+Target tokens : I saw a cat
+Final context : [0.890, 0.611]
+Mean context  : [0.454, 0.406]
+Observation   : many source words end up squeezed into one final vector.
+
+Saved files:
+  - page14_19_memory_trace.png
+  - page14_19_gate_heatmap.png
+  - page14_19_bottleneck.png
+  - page14_19_context_map.png
+  - page14_19_sequential_flow.gif
+  - page14_19_run_output.txt

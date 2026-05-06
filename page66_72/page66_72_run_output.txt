@@ -1,0 +1,27 @@
+=== page66_72 RAG demo started ===
+Indexed chunks: 8
+Query: What electric vehicle policy was launched in 2025?
+
+Top-3 Sparse retrieval:
+  1. doc_1_c1 score=11.016 text='Bangkok launched an electric vehicle incentive in 2025'
+  2. doc_3_c2 score=5.008 text='No new parking policy was announced'
+  3. doc_4_c1 score=3.910 text='A vehicle can reduce emissions when switched from gasoline to electric power'
+Top-3 Dense retrieval:
+  1. doc_1_c1 score=0.997 text='Bangkok launched an electric vehicle incentive in 2025'
+  2. doc_4_c1 score=0.859 text='A vehicle can reduce emissions when switched from gasoline to electric power'
+  3. doc_2_c1 score=0.858 text='Our company fleet includes electric cars, delivery vans, and motorcycles'
+Top-3 Hybrid (RRF) retrieval:
+  1. doc_1_c1 rrf=0.0328 title='City EV Policy 2025'
+  2. doc_4_c1 rrf=0.0320 title='Sustainability FAQ'
+  3. doc_2_c1 rrf=0.0313 title='Fleet Maintenance Notes'
+
+Generated grounded answer preview:
+Question: What electric vehicle policy was launched in 2025?
+
+Grounded answer draft:
+The 2025 policy introduces EV incentives and tax discounts, with charging expansion.
+Battery health checks are also part of operational best practice.
+
+Cited context:
+- Bangkok launched an electric vehicle incentive in 2025 (source=internal_policy)
+- A vehicle can reduce emissions when switched from gasoline to electric power (source=faq_portal)

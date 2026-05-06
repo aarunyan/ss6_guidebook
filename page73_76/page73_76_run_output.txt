@@ -1,0 +1,56 @@
+Query Engine demo for slides 73-76
+
+1. Schema linking
+   Query: Show the top finishers in Autumn Cup
+   Relevant columns: race_name, rank
+   Schema passed to the generator:
+   Table: race_records
+   Columns:
+   - id (INTEGER): unique row id
+   - uma_name (TEXT): horse name
+   - race_name (TEXT): race title
+   - rank (INTEGER): finishing rank, smaller is better
+   - speed_rating (INTEGER): internal performance score
+   - track (TEXT): Turf or Dirt
+2. SQL generation
+   Generated SQL: SELECT uma_name, rank, speed_rating FROM race_records WHERE race_name = 'Autumn Cup' ORDER BY rank ASC
+3. Execute + validate
+   Running: SELECT uma_name, rank, speed_rating FROM race_records WHERE race_name = 'Autumn Cup' ORDER BY rank ASC LIMIT 10
+   Result rows: 3
+   SQL result table:
+       uma_name  rank  speed_rating
+   Thunder Bolt     1            92
+    Silver Wind     2            88
+     Ocean Star     4            82
+4. Explain results
+   Autumn Cup summary: Thunder Bolt leads the result set with rank 1 and speed rating 92.
+
+1. Schema linking
+   Query: Which horse has the best average rank?
+   Relevant columns: rank, uma_name
+2. SQL generation
+   Generated SQL: SELECT uma_name, ROUND(AVG(rank), 2) AS avg_rank, COUNT(*) AS races FROM race_records GROUP BY uma_name ORDER BY avg_rank ASC, races DESC
+3. Execute + validate
+   Running: SELECT uma_name, ROUND(AVG(rank), 2) AS avg_rank, COUNT(*) AS races FROM race_records GROUP BY uma_name ORDER BY avg_rank ASC, races DESC LIMIT 10
+   Result rows: 4
+   Average-rank result table:
+        uma_name  avg_rank  races
+    Thunder Bolt      1.33      3
+     Silver Wind      2.50      2
+   Crimson Flash      3.00      2
+      Ocean Star      3.00      2
+4. Explain results
+   Average rank summary: Thunder Bolt has the best average rank at 1.33, based on 3 races.
+
+Text2Pandas path
+   Steps: Load DataFrame -> group by track -> calculate average speed_rating -> sort descending -> plot bar chart
+   Aggregated in-memory DataFrame:
+track  avg_speed_rating
+ Dirt         89.666667
+ Turf         87.166667
+
+Saved visuals:
+   - page73_76_query_engine_pipeline.png
+   - page73_76_text2sql_result.png
+   - page73_76_text2pandas_result.png
+   - page73_76_mode_comparison.png

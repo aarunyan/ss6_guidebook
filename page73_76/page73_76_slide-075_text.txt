@@ -1,0 +1,21 @@
+Structured Output — Pydantic + Instructor
+
+def text2sql_pipeline(user_query, db_conn):
+    # 1. Schema Linking:
+    schema = "Table: race_records (id, uma_name, race_name, rank)"
+
+    # 2. SQL Generation:
+    prompt = f"Schema: {schema}\nQuery: {user_query}\nReturn SELECT SQL."
+    sql = llm.generate_sql(prompt)
+
+    if "DROP" in sql.upper() or "DELETE" in sql.upper():
+        return "Error: Read-only allowed."
+
+    # 3. Execute + Validate:
+    cursor = db_conn.cursor()
+    raw_results = cursor.execute(sql + " LIMIT 10").fetchall()
+
+    # 4. Explain Results:
+    final_answer = llm.explain_results(f"Explain this data: {raw_results}")
+
+    return final_answer

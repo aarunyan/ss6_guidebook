@@ -1,0 +1,17 @@
+Text2Pandas vs Text2SQL — When to Use Which
+
+Text2Pandas
+- Data in memory (DataFrame)
+- Data science / analysis tasks
+- Visualization + charts
+- Custom transformations
+- Sandbox execution prevents injection
+- Easier for complex logic
+
+Text2SQL
+- Data in production database
+- Multi-table joins
+- Reporting / BI tasks
+- Data already in RDBMS
+- Need audit trail (SQL log)
+- Scales larger (billions of rows)

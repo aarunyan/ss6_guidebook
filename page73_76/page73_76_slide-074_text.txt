@@ -1,0 +1,28 @@
+Text2SQL Pipeline
+1. Schema Linking
+- Tell LLM what tables exist
+- Column names + types
+- Foreign key relationships
+- Few-shot SQL examples
+- Critical — missing = wrong
+
+2. SQL Generation
+- LLM generates SQL query
+- Specify dialect: MySQL/PG
+- Handle ambiguous terms
+- SELECT only (no DELETE)
+- Validate syntax before run
+
+3. Execute + Validate
+- Run SQL on database
+- Error -> retry loop
+- Limit rows to prevent flood
+- Check empty results
+- Prevent SQL injection
+
+4. Explain Results
+- Result table -> NL answer
+- LLM explains insights
+- Format: table/chart/text
+- Cite query used
+- Return to user

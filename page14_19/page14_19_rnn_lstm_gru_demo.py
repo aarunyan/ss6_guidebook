@@ -79,17 +79,18 @@ def simulate_rnn(tokens: List[str], signals: np.ndarray) -> List[Dict[str, float
 
 
 def simulate_lstm(tokens: List[str], signals: np.ndarray) -> List[Dict[str, float]]:
-    """A small hand-crafted LSTM to show forget, input, and output gates."""
+    """A small hand-crafted LSTM that feeds hidden state into the next-step gates."""
     cell = 0.0
     hidden = 0.0
     trace: List[Dict[str, float]] = []
 
     for step, (token, signal) in enumerate(zip(tokens, signals), start=1):
-        forget_gate = sigmoid(1.2 - 1.0 * signal)
-        input_gate = sigmoid(-0.5 + 2.4 * signal)
-        candidate = math.tanh(1.6 * signal - 0.2)
+        previous_hidden = hidden
+        forget_gate = sigmoid(0.9 - 0.9 * signal + 0.7 * previous_hidden)
+        input_gate = sigmoid(-0.5 + 2.0 * signal + 0.6 * previous_hidden)
+        candidate = math.tanh(1.4 * signal + 0.5 * previous_hidden - 0.2)
         cell = forget_gate * cell + input_gate * candidate
-        output_gate = sigmoid(0.4 + 1.4 * signal)
+        output_gate = sigmoid(0.3 + 1.2 * signal + 0.6 * previous_hidden)
         hidden = output_gate * math.tanh(cell)
 
         trace.append(
@@ -97,6 +98,7 @@ def simulate_lstm(tokens: List[str], signals: np.ndarray) -> List[Dict[str, floa
                 "step": step,
                 "token": token,
                 "signal": float(signal),
+                "prev_hidden": previous_hidden,
                 "forget": forget_gate,
                 "input": input_gate,
                 "candidate": candidate,
@@ -110,14 +112,15 @@ def simulate_lstm(tokens: List[str], signals: np.ndarray) -> List[Dict[str, floa
 
 
 def simulate_gru(tokens: List[str], signals: np.ndarray) -> List[Dict[str, float]]:
-    """A small hand-crafted GRU to show update and reset gates."""
+    """A small hand-crafted GRU that feeds hidden state into all gate decisions."""
     hidden = 0.0
     trace: List[Dict[str, float]] = []
 
     for step, (token, signal) in enumerate(zip(tokens, signals), start=1):
-        update_gate = sigmoid(-0.2 + 2.0 * signal)
-        reset_gate = sigmoid(1.2 - 1.8 * signal)
-        candidate = math.tanh(reset_gate * hidden + 1.4 * signal - 0.1)
+        previous_hidden = hidden
+        update_gate = sigmoid(-0.3 + 1.7 * signal + 0.8 * previous_hidden)
+        reset_gate = sigmoid(0.8 - 1.1 * signal + 0.5 * previous_hidden)
+        candidate = math.tanh(1.2 * signal + reset_gate * 0.9 * previous_hidden - 0.1)
         hidden = (1.0 - update_gate) * hidden + update_gate * candidate
 
         trace.append(
@@ -125,6 +128,7 @@ def simulate_gru(tokens: List[str], signals: np.ndarray) -> List[Dict[str, float
                 "step": step,
                 "token": token,
                 "signal": float(signal),
+                "prev_hidden": previous_hidden,
                 "update": update_gate,
                 "reset": reset_gate,
                 "candidate": candidate,

@@ -16,25 +16,25 @@ t= 8 token=purring  signal=0.65 state=+0.526 [##############............]
 
 LSTM
 ----
-t= 1 token=the      signal=0.10 state=-0.011 [..........................] forget=0.75 input=0.44 output=0.63
-t= 2 token=cat      signal=1.00 state=+0.550 [##############............] forget=0.55 input=0.87 output=0.86
-t= 3 token=sat      signal=0.55 state=+0.550 [##############............] forget=0.66 input=0.69 output=0.76
-t= 4 token=on       signal=0.15 state=+0.389 [##########................] forget=0.74 input=0.47 output=0.65
-t= 5 token=the      signal=0.10 state=+0.293 [########..................] forget=0.75 input=0.44 output=0.63
-t= 6 token=mat      signal=0.85 state=+0.622 [################..........] forget=0.59 input=0.82 output=0.83
-t= 7 token=while    signal=0.20 state=+0.429 [###########...............] forget=0.73 input=0.50 output=0.66
-t= 8 token=purring  signal=0.65 state=+0.599 [################..........] forget=0.63 input=0.74 output=0.79
+t= 1 token=the      signal=0.10 state=-0.015 [..........................] forget=0.69 input=0.43 output=0.60
+t= 2 token=cat      signal=1.00 state=+0.475 [############..............] forget=0.50 input=0.82 output=0.82
+t= 3 token=sat      signal=0.55 state=+0.565 [###############...........] forget=0.68 input=0.71 output=0.78
+t= 4 token=on       signal=0.15 state=+0.481 [#############.............] forget=0.76 input=0.53 output=0.69
+t= 5 token=the      signal=0.10 state=+0.421 [###########...............] forget=0.76 input=0.50 output=0.67
+t= 6 token=mat      signal=0.85 state=+0.670 [#################.........] forget=0.61 input=0.81 output=0.83
+t= 7 token=while    signal=0.20 state=+0.572 [###############...........] forget=0.77 input=0.57 output=0.72
+t= 8 token=purring  signal=0.65 state=+0.696 [##################........] forget=0.67 input=0.76 output=0.81
 
 GRU
 ---
-t= 1 token=the      signal=0.10 state=+0.020 [#.........................] reset=0.73 update=0.50
-t= 2 token=cat      signal=1.00 state=+0.744 [###################.......] reset=0.35 update=0.86
-t= 3 token=sat      signal=0.55 state=+0.779 [####################......] reset=0.55 update=0.71
-t= 4 token=on       signal=0.15 state=+0.677 [##################........] reset=0.72 update=0.52
-t= 5 token=the      signal=0.10 state=+0.584 [###############...........] reset=0.73 update=0.50
-t= 6 token=mat      signal=0.85 state=+0.818 [#####################.....] reset=0.42 update=0.82
-t= 7 token=while    signal=0.20 state=+0.718 [###################.......] reset=0.70 update=0.55
-t= 8 token=purring  signal=0.65 state=+0.799 [#####################.....] reset=0.51 update=0.75
+t= 1 token=the      signal=0.10 state=+0.009 [..........................] reset=0.67 update=0.47
+t= 2 token=cat      signal=1.00 state=+0.646 [#################.........] reset=0.43 update=0.80
+t= 3 token=sat      signal=0.55 state=+0.708 [##################........] reset=0.63 update=0.76
+t= 4 token=on       signal=0.15 state=+0.575 [###############...........] reset=0.73 update=0.63
+t= 5 token=the      signal=0.10 state=+0.460 [############..............] reset=0.73 update=0.58
+t= 6 token=mat      signal=0.85 state=+0.749 [###################.......] reset=0.52 update=0.82
+t= 7 token=while    signal=0.20 state=+0.623 [################..........] reset=0.72 update=0.65
+t= 8 token=purring  signal=0.65 state=+0.737 [###################.......] reset=0.60 update=0.79
 
 Seq2Seq bottleneck snapshot
 --------------------------

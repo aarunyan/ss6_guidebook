@@ -1,0 +1,19 @@
+Scale Law — Bigger = Smarter (and its limits)
+7B → 70B → 405B
+Parameters
+GPT-2 → LLaMA-3
+1T → 15T tokens
+Training Data
+15x increase in 5 years
+100x every ~2 years
+Compute
+Chinchilla Scaling
+Limitations of Scale Law
+· 
+Diminishing returns — double compute ≠ double quality
+· 
+Cost explosion — GPT-4 training ~$100M+
+· 
+Emergent abilities cannot be predicted in advance
+· 
+Data quality matters more than quantity at some point

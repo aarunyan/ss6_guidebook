@@ -1,0 +1,5 @@
+Attention Mechanism — The Game Changer
+*bidirectional encoding
+*autoregressive decoding
+*autoregressive decoding
+*bidirectional encoding

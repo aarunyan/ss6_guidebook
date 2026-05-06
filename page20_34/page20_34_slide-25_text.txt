@@ -1,0 +1,2 @@
+Seq2Seq --> Attention
+Attention Mechanism — The Game Changer

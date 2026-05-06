@@ -1,0 +1,5 @@
+Attention Mechanism — The Game Changer
+1 Sentence = 1 Vector 
+ ⟶ 1 Token = 1 Vector
+Gl
+obal Cross-Attention

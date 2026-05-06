@@ -1,0 +1,31 @@
+page11 n-gram demo
+===================
+Training sentences:
+  - I eat rice
+  - I eat noodles
+  - I eat rice
+  - You eat rice
+  - We eat rice
+  - They eat noodles
+  - Cats chase mice
+  - Dogs chase cats
+
+Key bigram counts:
+  Count("i eat") = 3
+  Count("eat rice") = 4
+  Count("eat noodles") = 2
+  Count("chase cats") = 1
+
+Bigram formula: P(next | previous) = Count(previous, next) / Count(previous)
+  Count("eat") = 6
+  P("rice" | "eat") = 4/6 = 0.67
+  P("noodles" | "eat") = 2/6 = 0.33
+
+Runtime view for context "eat":
+   eat -> rice     #############        P=0.67 count=4
+   eat -> noodles  ######               P=0.33 count=2
+
+What the demo shows:
+  1. Short context: the model only looks one word back in a bigram model.
+  2. Vocabulary explosion: many possible word pairs are never observed.
+  3. No meaning: "eat" is predicted from counts, not from understanding.

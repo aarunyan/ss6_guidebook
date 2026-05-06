@@ -1,0 +1,61 @@
+page12_13_word2vec_demo
+============================================================
+Goal: show how word2vec learns similar meanings from similar contexts.
+Bonus: connect the result to vector arithmetic and the static 'bank' limitation.
+
+Vocabulary size: 55
+Training sentences: 21
+Skip-gram pairs: 490
+
+Context snapshots from the corpus
+------------------------------------------------------------
+    king -> a:5, and:4, is:3, rules:1, woman:1
+   queen -> a:5, is:3, and:2, kingdom:1, rules:1
+    bank -> the:6, river:2, a:1, can:1, approve:1
+   paris -> is:1, the:1, france:1, has:1, as:1
+ bangkok -> is:1, the:1, thailand:1, has:1, as:1
+
+Training progress
+------------------------------------------------------------
+Epoch   1 | average loss = 4.0071
+Epoch  20 | average loss = 2.5949
+Epoch  40 | average loss = 2.3860
+Epoch  60 | average loss = 2.3492
+Epoch  80 | average loss = 2.3490
+Epoch 100 | average loss = 2.3421
+Epoch 120 | average loss = 2.3363
+Epoch 140 | average loss = 2.3355
+Epoch 160 | average loss = 2.3336
+Epoch 180 | average loss = 2.3331
+Epoch 200 | average loss = 2.3340
+Epoch 220 | average loss = 2.3354
+
+Nearest words to 'king'
+------------------------------------------------------------
+     woman : 0.955
+    prince : 0.934
+     young : 0.919
+  princess : 0.881
+     ruler : 0.876
+     queen : 0.759
+
+Analogy experiments
+------------------------------------------------------------
+king - man + woman           -> prince (0.854), ruler (0.738), princess (0.730), young (0.725), money (0.629)
+paris - france + thailand    -> bangkok (0.987), capital (0.810), madrid (0.773), berlin (0.755), spain (0.581)
+
+Why page 13 says 'bank' is a problem
+------------------------------------------------------------
+similarity(bank, money) = 0.404
+similarity(bank,  loan) = 0.448
+similarity(bank, river) = 0.779
+similarity(bank, muddy) = 0.397
+Observation: one static vector tries to cover both the finance and river meanings.
+
+Saved files
+------------------------------------------------------------
+page12_13_training_loss.png
+page12_13_embedding_journey.gif
+page12_13_embedding_map.png
+page12_13_king_similarity.png
+page12_13_bank_problem.png

@@ -1,0 +1,9 @@
+numpy
+nltk
+pythainlp
+deepcut
+requests
+gensim
+pandas
+matplotlib
+scikit-learn

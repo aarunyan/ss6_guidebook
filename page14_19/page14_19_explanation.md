@@ -118,6 +118,13 @@ In `simulate_lstm()`, the script computes:
 - `candidate`
 - `output_gate`
 
+Unlike the first draft of the demo, these gates now depend on both:
+
+- the current token signal
+- the previous hidden state
+
+That makes the recurrence much closer to a real LSTM, where the next step depends on what the model was already thinking.
+
 Then it updates:
 
 ```text
@@ -136,6 +143,8 @@ In `simulate_gru()`, the script computes:
 - `reset_gate`
 - `update_gate`
 - `candidate`
+
+Those gate values now also depend on the previous hidden state, which is how a real GRU decides whether to keep or overwrite what it already knows.
 
 Then it blends:
 

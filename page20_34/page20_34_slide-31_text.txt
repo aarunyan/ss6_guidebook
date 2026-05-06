@@ -1,0 +1,34 @@
+Transformer — 3 Main Variants
+Encoder-only
+· 
+Read text → understand context
+· 
+BERT, RoBERTa, DeBERTa
+· 
+Tasks: classification, NER
+· 
+Embeddings, extractive QA
+· 
+Sees both left & right context
+Decoder-only
+· 
+Generate text token by token
+· 
+GPT, LLaMA, Mistral, Claude
+· 
+Tasks: text generation, chat
+· 
+Autoregressive prediction
+· 
+Only sees left context
+Encoder-Decoder
+· 
+Receive input → produce output
+· 
+T5, BART, mT5
+· 
+Tasks: translation, summarize
+· 
+Seq2Seq architecture
+· 
+Encoder understands, Decoder generates

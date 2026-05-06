@@ -1,0 +1,38 @@
+Attention demo aligned to slides 20-34
+======================================
+
+Sentence: "The animal didn't cross the street because it was too tired"
+Goal: show why the token 'it' focuses on the right context instead of relying on one bottleneck vector.
+
+Query token: it
+It compares itself with every other token and then turns the scores into probabilities.
+
+looks at The      raw_score=+0.050 attention=0.056 [##..........................]
+looks at animal   raw_score=+1.296 attention=0.194 [#####.......................]
+looks at didn't   raw_score=-0.090 attention=0.049 [#...........................]
+looks at cross    raw_score=+0.353 attention=0.076 [##..........................]
+looks at the      raw_score=+0.050 attention=0.056 [##..........................]
+looks at street   raw_score=+0.023 attention=0.054 [##..........................]
+looks at because  raw_score=+0.088 attention=0.058 [##..........................]
+looks at it       raw_score=+1.169 attention=0.171 [#####.......................]
+looks at was      raw_score=+0.163 attention=0.062 [##..........................]
+looks at too      raw_score=+0.285 attention=0.071 [##..........................]
+looks at tired    raw_score=+1.064 attention=0.154 [####........................]
+
+Top 3 places where 'it' looks:
+  animal   -> 0.194
+  it       -> 0.171
+  tired    -> 0.154
+
+Decoder-style masked attention cannot look ahead to future tokens.
+Bidirectional attention from "it" to "tired": 0.154
+Masked attention from "it" to "tired": 0.000
+
+Saved files:
+  page20_34_attention_heatmap.png
+  page20_34_it_focus.png
+  page20_34_context_vectors.png
+  page20_34_transformer_variants.png
+  page20_34_mask_comparison.png
+  page20_34_attention_scan.gif
+  page20_34_run_output.txt

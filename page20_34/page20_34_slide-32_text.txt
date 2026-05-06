@@ -1,0 +1,22 @@
+Pre-train → Fine-tune Paradigm
+1
+Pre-training
+· Massive data (from internet, etc.)
+· No labels needed
+· Learns language + world knowledge
+· High compute required
+· Done once
+2
+Fine-tuning
+· Much less data
+· Task-specific labels
+· Adapts model to task
+· Low compute cost
+· Multiple tasks possible
+3
+Inference
+· Real-world usage
+· Prompt → Response
+· No more training
+· Fast + efficient
+· Deploy anywhere

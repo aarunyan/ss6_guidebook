@@ -1,0 +1,4 @@
+(2017)
+A* Paper
+[1706.03762] Attention Is All You Need
+Attention Mechanism — The Game Changer

@@ -1,0 +1,4 @@
+Transformer Based Architecture
+*bidirectional encoding
+*autoregressive decoding
+Attention Mechanism — The Game Changer

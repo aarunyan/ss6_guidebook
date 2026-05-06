@@ -1,0 +1,27 @@
+Attention Mechanism — The Game Changer
+"Read all words at once, then choose where to focus"
+Instead of reading one word at a time → 
+look at all words simultaneously
+ 
+and ask: "
+which words
+ should this token 
+pay attention
+ to?"
+Example: "The animal didn't cross the street because it was too tired"
+  → what does 
+"
+it
+"
+ refer to?
+  → Attention points to 
+"
+animal
+"
+Why it changed everything:
+  · 
+Fully parallelizable
+ → much faster training
+  · Long-range dependency solved completely
+  · Scales indefinitely → foundation of all 
+LLMs

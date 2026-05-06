@@ -1,0 +1,2 @@
+ทำไมไม่ใช้ Attention หละ
+Attention Mechanism — The Game Changer

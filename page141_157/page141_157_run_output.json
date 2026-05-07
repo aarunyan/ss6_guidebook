@@ -1,0 +1,55 @@
+{
+  "quantization_rows": [
+    {
+      "format": "FP16",
+      "bits": 16,
+      "memory_gb": 140.0,
+      "quality_drop": 0.0,
+      "throughput_gain": 1.0
+    },
+    {
+      "format": "GGUF Q4_K_M",
+      "bits": 4,
+      "memory_gb": 35.0,
+      "quality_drop": 1.2,
+      "throughput_gain": 2.0
+    },
+    {
+      "format": "GPTQ 4-bit",
+      "bits": 4,
+      "memory_gb": 35.0,
+      "quality_drop": 2.2,
+      "throughput_gain": 2.3
+    },
+    {
+      "format": "AWQ 4-bit",
+      "bits": 4,
+      "memory_gb": 35.0,
+      "quality_drop": 0.8,
+      "throughput_gain": 2.1
+    }
+  ],
+  "paged_attention": {
+    "request_count": 800,
+    "max_seq_len": 4096,
+    "page_size": 128,
+    "actual_tokens_used": 1714262,
+    "naive_reserved_tokens": 3276800,
+    "paged_reserved_tokens": 1766528,
+    "naive_waste_tokens": 1562538,
+    "paged_waste_tokens": 52266,
+    "utilization_naive": 0.5232,
+    "utilization_paged": 0.9704,
+    "efficiency_gain_x": 1.85
+  },
+  "tool_recommendations": {
+    "I am a beginner and want local chat quickly": "Ollama",
+    "I need high-throughput API serving": "vLLM",
+    "I need an embeddable C++ runtime": "llama.cpp"
+  },
+  "generated_plots": [
+    "page141_157_quantization_tradeoff.png",
+    "page141_157_local_inference_options.png",
+    "page141_157_paged_attention_efficiency.png"
+  ]
+}

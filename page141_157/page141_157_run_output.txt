@@ -1,0 +1,18 @@
+Local Development Demo (Slides 141-157)
+=============================================
+
+Quantization summary:
+- FP16: 16 bit, 140.0 GB, quality_drop=0.0, speed_x=1.0
+- GGUF Q4_K_M: 4 bit, 35.0 GB, quality_drop=1.2, speed_x=2.0
+- GPTQ 4-bit: 4 bit, 35.0 GB, quality_drop=2.2, speed_x=2.3
+- AWQ 4-bit: 4 bit, 35.0 GB, quality_drop=0.8, speed_x=2.1
+
+PagedAttention simulation:
+- Utilization naive: 0.5232
+- Utilization paged: 0.9704
+- Efficiency gain: 1.85x
+
+Tool recommendations:
+- I am a beginner and want local chat quickly -> Ollama
+- I need high-throughput API serving -> vLLM
+- I need an embeddable C++ runtime -> llama.cpp

@@ -1,0 +1,29 @@
+User Prompt
+    |
+    v
++-------------------+
+|   LLM / Agent     |
++-------------------+
+   | plan next step
+   |------------------------------.
+   v                              |
++-------------------+             |
+| Tool Decision     |             |
++-------------------+             |
+   | call tool(s)                 |
+   v                              |
++-------------------+             |
+| External Tools    |             |
+| web/weather/etc   |             |
++-------------------+             |
+   | return result                |
+   '------------------------------'
+   |
+   v
++-------------------+
+| Skill Registry    |
+| versioned skills  |
++-------------------+
+   |
+   v
+Final Answer / Action

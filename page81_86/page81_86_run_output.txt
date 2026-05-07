@@ -1,0 +1,26 @@
+=== Agentic Tool Call + Skill System Demo ===
+
+1) Sequential tool calls
+[ToolCall] weather_api <- {'city': 'Bangkok'}
+[ToolResult] weather_api -> {'city': 'Bangkok', 'forecast': '32C, chance of rain 20%'}
+[ToolCall] calendar_api <- {'person': 'Alex'}
+[ToolResult] calendar_api -> {'person': 'Alex', 'available_slots': ['10:00', '14:30']}
+
+2) Parallel tool calls
+[ToolCall] weather_api <- {'city': 'Bangkok'}
+[ToolCall] calendar_api <- {'person': 'Alex'}
+[ToolResult] calendar_api -> {'person': 'Alex', 'available_slots': ['10:00', '14:30']}
+[ToolResult] weather_api -> {'city': 'Bangkok', 'forecast': '32C, chance of rain 20%'}
+
+3) Error handling with fallback
+[ToolCall] web_search <- {'query': 'unstable market update'}
+[ToolError] web_search API timeout | applying fallback strategy
+[ToolCall] web_search <- {'query': 'market update summary'}
+[ToolResult] web_search -> {'results': ["Result 1 for 'market update summary'", "Result 2 for 'market update summary'", 'Parallel calls reduce total waiting time.']}
+
+4) Skill composition with versioned registry
+
+Demo artifacts saved:
+- page81_86_run_output.json
+- page81_86_agentic_flow_ascii.txt
+- page81_86_parallel_latency.png (or fallback txt)

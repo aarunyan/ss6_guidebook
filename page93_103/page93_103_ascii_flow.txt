@@ -1,0 +1,14 @@
+Conversation Compression (chat history)         Context Compression (retrieved docs)
+
+Turn N Prompt                                   Retrieval Prompt
++----------------------------------+            +----------------------------------+
+| Summary of old turns (compressed)|            | User question                   |
+| Recent turns (full detail)       |            | + top-K docs                    |
++----------------+-----------------+            +----------------+-----------------+
+                 |                                              |
+                 v                                              v
+           LLM generates answer                     Compressor keeps only relevant spans
+                 |                                              |
+                 +----------------------+-----------------------+
+                                        v
+                                Shorter effective context

@@ -1,0 +1,13 @@
+=== Page 93-103 Demo: Conversation & Context Compression ===
+Turns simulated: 12
+Final prompt tokens without compression: 4725
+Final prompt tokens with conversation compression: 2390
+Conversation compression reduction: 49.4%
+Original retrieved context tokens: 4200
+ - keep 100% -> 4200 tokens
+ - keep  80% -> 3360 tokens
+ - keep  60% -> 2520 tokens
+ - keep  45% -> 1890 tokens
+ - keep  30% -> 1260 tokens
+ - keep  20% ->  840 tokens
+Peak simulated quality near: 45% remaining context

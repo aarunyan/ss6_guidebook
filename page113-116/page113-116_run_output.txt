@@ -1,0 +1,24 @@
+ReACT + Deep Research Demo Run
+==================================
+Question: What is the difference between a ReACT agent and deep research workflow?
+
+ReACT Trace:
+Iteration 1
+  Thought     : I should gather broad context before answering.
+  Action      : search_web('ReACT agent components')
+  Observation : Found recurring pattern: Thought -> Action -> Observation.
+Iteration 2
+  Thought     : Need a concrete example with tools and loops.
+  Action      : read_docs('agent_tool_use_examples')
+  Observation : Examples show iterative tool calls plus intermediate reasoning traces.
+Iteration 3
+  Thought     : I now have enough to draft a concise explanation.
+  Action      : compose_answer('What is the difference between...')
+  Observation : Draft emphasizes loop behavior and error-correction via observations.
+
+Deep Research Weighted Scores:
+  Benchmark E: 0.906
+  Paper A: 0.877
+  Docs C: 0.837
+  Blog B: 0.781
+  Forum D: 0.664

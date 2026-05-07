@@ -1,0 +1,21 @@
+=== Search Strategy Demo (Slides 110-112) ===
+Top-1 Accuracy Summary
+- Semantic  : 0.50
+- Keyword   : 1.00
+- Hybrid+RRF: 0.75
+- Agentic   : 0.75
+
+Per-query picks
+- Query: I forgot my sign-in secret, how can I recover access?
+  target=D1 | semantic=D2 | keyword=D1 | hybrid=D2 | agentic=D2 (hops=2)
+- Query: Explain BM25 idf term weighting
+  target=D3 | semantic=D3 | keyword=D3 | hybrid=D3 | agentic=D3 (hops=2)
+- Query: Guide to optimize GPU transformer serving
+  target=D4 | semantic=D3 | keyword=D4 | hybrid=D4 | agentic=D4 (hops=2)
+- Query: What is breadth first search in graphs?
+  target=D5 | semantic=D5 | keyword=D5 | hybrid=D5 | agentic=D5 (hops=2)
+
+Saved artifacts:
+- page110_112_strategy_accuracy.png
+- page110_112_quality_vs_complexity.png
+- page110_112_ascii_flow.txt

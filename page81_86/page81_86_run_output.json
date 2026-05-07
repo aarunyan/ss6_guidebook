@@ -1,0 +1,49 @@
+{
+  "sequential": {
+    "weather": {
+      "city": "Bangkok",
+      "forecast": "32C, chance of rain 20%"
+    },
+    "calendar": {
+      "person": "Alex",
+      "available_slots": [
+        "10:00",
+        "14:30"
+      ]
+    },
+    "sequential_elapsed_sec": 1.308
+  },
+  "parallel": {
+    "weather": {
+      "city": "Bangkok",
+      "forecast": "32C, chance of rain 20%"
+    },
+    "calendar": {
+      "person": "Alex",
+      "available_slots": [
+        "10:00",
+        "14:30"
+      ]
+    },
+    "parallel_elapsed_sec": 0.721
+  },
+  "fallback_search": {
+    "results": [
+      "Result 1 for 'market update summary'",
+      "Result 2 for 'market update summary'",
+      "Parallel calls reduce total waiting time."
+    ]
+  },
+  "skill_pipeline": {
+    "profile": {
+      "customer_id": "CUST-2048",
+      "tier": "Gold",
+      "risk_score": 0.22
+    },
+    "alert": {
+      "channel": "#customer-success",
+      "status": "sent",
+      "message": "Customer CUST-2048 tier=Gold risk=0.22 needs follow-up"
+    }
+  }
+}

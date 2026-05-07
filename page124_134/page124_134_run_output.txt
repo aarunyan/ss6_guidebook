@@ -1,0 +1,70 @@
+=== MCP DEMO RUN OUTPUT ===
+
+Capabilities discovered:
+{
+  "tools": [
+    "build_itinerary"
+  ],
+  "resources": [
+    "api://weather/maui-next-week"
+  ],
+  "prompts": [
+    "travel_summary"
+  ]
+}
+
+Weather resource:
+{
+  "location": "Maui",
+  "forecast": [
+    {
+      "day": "Mon",
+      "condition": "Sunny",
+      "temp_f": 82
+    },
+    {
+      "day": "Tue",
+      "condition": "Sunny",
+      "temp_f": 83
+    },
+    {
+      "day": "Wed",
+      "condition": "Shower",
+      "temp_f": 79
+    },
+    {
+      "day": "Thu",
+      "condition": "Sunny",
+      "temp_f": 82
+    },
+    {
+      "day": "Fri",
+      "condition": "Partly Cloudy",
+      "temp_f": 81
+    }
+  ]
+}
+
+Authorized tool call response:
+{
+  "ok": true,
+  "result": {
+    "flights_usd": 1150,
+    "hotel_usd": 900,
+    "activities_usd": 275,
+    "meals_usd": 600,
+    "spent_usd": 2925,
+    "remaining_usd": 75,
+    "status": "within_budget"
+  }
+}
+
+Unauthorized tool call response:
+{
+  "ok": false,
+  "error": "PermissionDenied",
+  "required_scope": "tool:build_itinerary"
+}
+
+Rendered prompt template:
+Create a concise travel summary for Maui. Mention weather highlights and budget status (within_budget).

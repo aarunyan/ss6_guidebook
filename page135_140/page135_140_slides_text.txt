@@ -1,0 +1,17 @@
+--- Slide 135 ---
+M16: Use Case — | MLOps Agent | Planning → Execution → Reflection → Finalizing
+
+--- Slide 136 ---
+MLOps Agent — Full Agentic Pipeline | 1 | Planning | · Receive business requirement | · Break into task graph | · Dependency mapping | · Resource estimation | · Prioritization | 2 | Tool | Execution | · Call real tools | · Data loader, trainer | · Parallel execution | · State management | · Progress tracking | 3 | Reflection / | Self-correct | · Check output every step | · Poor metric → diagnose | · Adjust → retry | · Error classification | · Recoverable vs fatal | 4 | Finalizing | · Compile results | · Generate report | · Human handoff (HITL) | · Archive artifacts | · Notify stakeholders
+
+--- Slide 137 ---
+Agent Frameworks You Should Know | LangGraph | · | Graph-based agent flow | · | State machine approach | · | Best for complex workflows | · | Checkpointing built-in | · | Human-in-the-loop easy | CrewAI | · | Role-based multi-agent | · | Agent = role + goal + tools | · | Sequential / parallel crews | · | Easy to get started | · | Good for team-like tasks | AutoGen | · | Conversation-driven agents | · | Multi-agent conversations | · | Code execution built-in | · | Research-backed (Microsoft) | · | Flexible + extensible
+
+--- Slide 138 ---
+Agent Frameworks You Should Know | LangGraph | · | Graph-based agent flow | · | State machine approach | · | Best for complex workflows | · | Checkpointing built-in | · | Human-in-the-loop easy
+
+--- Slide 139 ---
+Agent Frameworks You Should Know | CrewAI | · | Role-based multi-agent | · | Agent = role + goal + tools | · | Sequential / parallel crews | · | Easy to get started | · | Good for team-like tasks
+
+--- Slide 140 ---
+Agent Frameworks You Should Know | AutoGen | · | Conversation-driven agents | · | Multi-agent conversations | · | Code execution built-in | · | Research-backed (Microsoft) | · | Flexible + extensible

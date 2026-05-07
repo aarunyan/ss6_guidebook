@@ -1,0 +1,75 @@
+/Users/aarunyan/.matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /var/folders/22/fr44pgvx1w18j_bg04hbj6g00000gn/T/matplotlib-ux_gtp2d because there was an issue with the default path (/Users/aarunyan/.matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+
+Fontconfig error: No writable cache directories
+	/opt/homebrew/var/cache/fontconfig
+	/Users/aarunyan/.cache/fontconfig
+	/Users/aarunyan/.fontconfig
+
+Fontconfig error: No writable cache directories
+	/opt/homebrew/var/cache/fontconfig
+	/Users/aarunyan/.cache/fontconfig
+	/Users/aarunyan/.fontconfig
+
+Fontconfig error: No writable cache directories
+	/opt/homebrew/var/cache/fontconfig
+	/Users/aarunyan/.cache/fontconfig
+	/Users/aarunyan/.fontconfig
+
+Fontconfig error: No writable cache directories
+	/opt/homebrew/var/cache/fontconfig
+	/Users/aarunyan/.cache/fontconfig
+	/Users/aarunyan/.fontconfig
+Matplotlib is building the font cache; this may take a moment.
+=== Query Optimization Demo (Slides 104-109) ===
+Original query: python error fix
+
+[Baseline Top-5]
+- doc_runtime_1   score=0.100
+- doc_runtime_2   score=0.000
+- doc_runtime_3   score=0.000
+- doc_vector_1    score=0.000
+- doc_finance_1   score=0.000
+
+[Rewrite]
+Rewritten query: common python runtime errors and traceback debugging solutions
+- doc_runtime_1   score=0.333
+- doc_runtime_3   score=0.200
+- doc_runtime_2   score=0.176
+- doc_finance_1   score=0.059
+- doc_finance_2   score=0.056
+
+[HyDE Expansion]
+HyDE paragraph: A Python runtime error often happens due to wrong types, undefined names, or bad indexing. Use traceback analysis, inspect stack frames, and test a minimal reproducible example to isolate and fix the root cause.
+- doc_runtime_2   score=0.103
+- doc_runtime_1   score=0.083
+- doc_finance_1   score=0.051
+- doc_finance_2   score=0.050
+- doc_runtime_3   score=0.025
+
+[Multi-query + RRF fused Top-5]
+- doc_runtime_1   rrf_score=0.0653
+- doc_runtime_2   rrf_score=0.0643
+- doc_runtime_3   rrf_score=0.0640
+- doc_finance_1   rrf_score=0.0618
+- doc_vector_1    rrf_score=0.0469
+
+[Step-back Prompting]
+Specific:    What caused the 2008 financial crisis?
+Generalized: What are common causes of financial crises?
+
+[Sub-question Decomposition]
+1. details about Compare Python NameError
+2. details about TypeError
+3. details about IndexError
+
+[Semantic Routing]
+- 'Special Week speed stats' -> sql_db
+- 'Special Week lore' -> vector_db
+- 'latest market news today' -> web
+- 'python error fix' -> vector_db
+
+Saved visualizations:
+- page104_109/page104_109_quality_comparison.png
+- page104_109/page104_109_routing_distribution.png
+- page104_109/page104_109_rrf_fused_scores.png

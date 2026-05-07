@@ -1,0 +1,38 @@
+=== 1) Short-term memory behavior ===
+SHORT_TERM_APPEND: User says their preferred nickname is Arthur.
+SHORT_TERM_APPEND: User asks for a summary of legal documents.
+SHORT_TERM_APPEND: User corrects nickname to Kui Kui.
+SHORT_TERM_APPEND: User asks the deadline again.
+SHORT_TERM_APPEND: User asks to forget the old nickname.
+SHORT_TERM_SNAPSHOT:
+  1. User asks for a summary of legal documents.
+  2. User corrects nickname to Kui Kui.
+  3. User asks the deadline again.
+  4. User asks to forget the old nickname.
+
+=== 2) Long-term memory operations ===
+STORE  : user_alias -> Arthur (profile)
+RETRIEVE: user_alias -> Arthur (v1)
+UPDATE : user_alias -> Kui Kui (v2)
+RETRIEVE: user_alias -> Kui Kui (v2)
+STORE  : event_1 -> User works in legal ops. (episodic)
+STORE  : event_2 -> User often asks for contract summaries. (episodic)
+STORE  : event_3 -> User prefers bullet-point answers. (episodic)
+STORE  : user_work_style -> User works in legal ops. | User often asks for contract summaries. | User prefers bullet-point answers. (semantic)
+CONSOLIDATE: ['event_1', 'event_2', 'event_3'] -> user_work_style
+RETRIEVE: user_work_style -> User works in legal ops. | User often asks for contract summaries. | User prefers bullet-point answers. (v1)
+FORGET : event_2 deleted
+RETRIEVE: event_2 -> NOT FOUND
+
+=== 3) Edge case: multi-agent write conflict ===
+AGENT_A and AGENT_B both read user_alias at version 2
+SAFE_UPDATE: user_alias updated to 'Kui' (v3)
+SAFE_UPDATE: conflict on user_alias (expected v2, found v3)
+Conflict handled: Agent B must re-read then retry.
+
+=== 4) Create visualizations ===
+Saved: page87_92_memory_types_timeline.png
+Saved: page87_92_memory_operations_flow.png
+Saved: page87_92_consolidation_before_after.png
+
+Demo finished.
